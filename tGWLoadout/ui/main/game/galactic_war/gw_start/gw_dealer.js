@@ -112,7 +112,9 @@ define([
         'tgw_start_vehicle_buffed',
         'tgw_start_air_buffed',
         'tgw_start_orbital_buffed',
-        'tgw_start_bot_buffed'
+        'tgw_start_bot_buffed',
+        'tgw_start_master',
+        'tgw_start_stationary'
     ];
 
     var cards = [];

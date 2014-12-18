@@ -15,7 +15,7 @@ define([
             return 'Buffed Bot Commander';
         },
         icon: function (params) {
-            return 'coui://ui/main/game/galactic_war/shared/img/red-commander.png';
+            return 'coui://ui/mods/tGWDeck/bot.png';
         },
         describe: function (params) { return 'The Bot Commander loadout but easier. Metal production 150%, speed 120%, damage 130%.'; },
         deal: function (system) {

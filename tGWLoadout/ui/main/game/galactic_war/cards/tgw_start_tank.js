@@ -17,7 +17,7 @@ define([
         icon: function (params) {
             return 'coui://ui/main/game/galactic_war/shared/img/red-commander.png';
         },
-        describe: function (params) { return 'This commander thinks less is more, and has modifed his unit blueprints to that end. More health, more damage, but less speed and greater cost.'; },
+        describe: function (params) { return 'This commander thinks less is more, and has modified his unit blueprints to that end. More health, more damage, but less speed and greater cost.'; },
         deal: function (system) {
             return {
                 params: {

@@ -15,7 +15,7 @@ define([
             return 'Borked Air Commander';
         },
         icon: function (params) {
-            return 'coui://ui/main/game/galactic_war/shared/img/red-commander.png';
+            return 'coui://ui/mods/tGWDeck/air.png';
         },
         describe: function (params) { return 'The Air Commander loadout but harder. Metal production 50%, speed 80%, damage 70%.'; },
         deal: function (system) {

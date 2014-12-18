@@ -58,10 +58,13 @@ var startCards = [
     { id: 'tgw_start_vehicle_buffed' },
     { id: 'tgw_start_air_buffed' },
     { id: 'tgw_start_orbital_buffed' },
-    { id: 'tgw_start_bot_buffed' }
+    { id: 'tgw_start_bot_buffed' },
+    { id: 'tgw_start_master' },
+    { id: 'tgw_start_stationary' }
 ];
 
 $(document).ready(function () {
+    locAddNamespace('galactic_war');
 
     // Needed to reset the music when returning to this screen from the play screen
     api.audio.setMusic('/Music/Main_Menu_Music');
@@ -277,7 +280,11 @@ $(document).ready(function () {
         // new game setup
         self.newGame = ko.observable();
         self.newGameSeed = ko.observable(Math.floor(Math.random() * 1000000).toString());
-        self.newGameName = ko.observable('New Game');
+
+        var defaultNewGameName = function () {
+            return 'War - ' + UberUtility.createDateString()
+        };
+        self.newGameName = ko.observable(defaultNewGameName());
         self.newGameSizeIndex = ko.observable(3);
         self.newGameDifficultyIndex = ko.observable(0);
 
@@ -483,6 +490,12 @@ $(document).ready(function () {
                         info.boss.micro_type = diffInfo.microType;
                         info.boss.go_for_the_kill = diffInfo.goForKill;
                         info.boss.neural_data_mod = diffInfo.neuralDataMod;
+                        if (info.boss.personality)
+                        {
+                            info.boss.personality.priority_scout_metal_spots = diffInfo.priority_scout_metal_spots;
+                            info.boss.personality.metal_demand_check *= diffInfo.bossDemandCheckMod;
+                            info.boss.personality.energy_demand_check *= diffInfo.bossDemandCheckMod;
+                        }
                     }
                     _.forEach(info.workers, function (worker) {
                         var starPct = 1.0;
@@ -528,8 +541,6 @@ $(document).ready(function () {
                         star.system().name = ai.name;
                         if (ai.html) {
                             var html = ai.html;
-                            if (_.isArray(html))
-                                html = html.join('\n');
                             star.system().html = html;
                             star.system().description = '';
                         }

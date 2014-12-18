@@ -15,7 +15,7 @@ define([
             return 'Borked Orbital Commander';
         },
         icon: function (params) {
-            return 'coui://ui/main/game/galactic_war/shared/img/red-commander.png';
+            return 'coui://ui/mods/tGWDeck/orb.png';
         },
         describe: function (params) { return 'The Orbital Commander loadout but harder. Metal production 50%, speed 80%, damage 70%.'; },
         deal: function (system) {
