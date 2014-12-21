@@ -33,7 +33,7 @@ define([
                 if (!buffCount) {
                     GWCStart.buff(inventory);
                     
-                    inventory.maxCards(10);
+                    inventory.maxCards(inventory.maxCards() + 7);
                 }
                 else {
                     // Don't clog up a slot.
